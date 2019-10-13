@@ -1,0 +1,60 @@
+---
+title: "Ejercicio_EDDC"
+author: "Oscar Gerardo Hernández Martínez"
+date: "6/10/2019"
+output: pdf_document
+---
+
+```{r}
+library(MASS)
+df1 <- birthwt 
+head(df1)
+str(df1)
+help("birthwt")
+df2 <- table(df1$race,df1$low) #Creamos la tabla
+dimnames(df2) <- list("Race" = c("White", "Black", "Other"), 
+                      "Weight" = c("<2.5", ">2.5")) #Cambiamos los nombres
+df2
+prop.table(df2)
+mosaicplot(df2, col = c("green", "red"))
+barplot(df2, beside = TRUE, legend.text = TRUE, col=c("white", "burlywood4", "lightgreen"))
+```
+
+Se puede afirmar que las mujeres blancas son las que, en promedio, tienen más bebés con peso mayor a 2.5kg. Al mismo tiempo, son las mismas cuyos bebés suelen pesar menos de 2.5kg., no obstante, la diferencia con las mujeres de color "otro" es casi mínima.
+
+```{r}
+df3 <- table(df1$smoke, df1$low) #Creamos la tabla
+dimnames(df3) <- list("Smoke" = c("No", "Yes"), 
+                      "Weight" = c("<2.5", ">2.5")) #Modificamos los nombres
+df3
+prop.table(df3)
+mosaicplot(df3, col = c("brown2", "lightgreen"))
+barplot(df3, beside = TRUE, legend.text = TRUE, col=c("brown2", "lightgreen"))
+```
+
+Las mujeres que no fuman tienen más probabilidad de tener hijos con un peso mayor a 2.5 k.g.
+Las mujeres que fuman son un poco más estables en cuanto al peso de sus hijos, no obstante, también tienen una mayor propensión a tener un hijo de más de 2.5 k.g.
+
+```{r}
+df4 <- table(df1$ht, df1$low) #Creamos la tabla
+dimnames(df4) <- list("Hyper" = c("No", "Yes"), 
+                      "Weight" = c("<2.5", ">2.5")) #Modificamos los nombres
+df4
+prop.table(df4)
+mosaicplot(df4, col = c("yellow", "blue"))
+barplot(df4, beside = TRUE, legend.text = TRUE, col=c("blue", "yellow"))
+```
+
+Las mujeres que no tienen hipertensión son mucho más propensas a tener un hijo con un peso mayor a 2.5 k.g. Mientras que casi no hay diferencia en el peso de los hijos de las madres que tienen hipertensión.
+
+```{r}
+df5 <- table(df1$race, df1$smoke, df1$low) #Creamos la tabla
+dimnames(df5) <- list("Race" = c("White", "Black", "Other"),
+                      "Smoke" = c("No", "Yes"),
+                      "Weight" = c("<2.5", ">2.5")) #Modificamos los nombres
+df5
+prop.table(df5)
+mosaicplot(df5, col = c("white", "burlywood4","pink"))
+```
+
+

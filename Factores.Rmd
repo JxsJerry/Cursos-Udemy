@@ -1,0 +1,47 @@
+---
+title: "Factores"
+author: "Oscar Gerardo Hernández Martínez"
+date: "7/7/2019"
+output: pdf_document
+---
+
+Un factor es como un vector, pero con una estructura interna más rica que permite usarlo para clasificar observaciones.
+
+- **levels:** atributo del factor. Cada elemento del factor es igual a un nivel. Los niveles clasifican las entradas del factor. Se ordenan por orden alfabético
+- Para definir un factor, primero hemos de definir un vector y trasformarlo por medio de una de las funciones **factor()** o **as.factor()**.
+
+## La función factor()
+
+- **factor(vector,levels=...):** define un factor a partir del vector y dispone de algunos parámetros que permiten modificar el factor que se crea:
+
+  + **levels:** permite especificar los niveles e incluso añadir niveles que no aparecen en el vector
+  + **labels:** permite cambiar los nombres de los niveles
+
+- **levels(factor):** para obtener los niveles del factor
+
+**EJEMPLOS** *notas = c(1,4,3,2,3,2,4,3,1,2,3,4,2,3,4) = * `r notas = c(1,4,3,2,3,2,4,3,1,2,3,4,2,3,4)` `r notas`
+
+*notas.factor = factor(notas)* `r notas.factor = factor(notas)` ---> `r notas.factor` 
+
+> Levels: `r levels(notas.factor)`
+
+*levels(notas.factor) = c("Suspendido", "Suficiente", "Notable", "Excelente")* `r levels(notas.factor) = c("Suspendido", "Suficiente", "Notable", "Excelente")`
+
+**notas.factor** 
+
+`r notas.factor`
+
+> Levels: `r levels(notas.factor)`
+
+## Factor Ordenado
+
+Es un factor donde los niveles siguen un orden.
+ 
+  - **ordered(vector,levels=...):** función que define un factor ordenado y tiene los mismos parámetros que *factor*.
+  
+*ordered(notas, labels = c("Sus", "Suf", "Not", "Exc"))* 
+
+`r ordered(notas, labels = c("Sus", "Suf", "Not", "Exc"))`
+
+> Levels: Sus < Suf < Not < Exc
+

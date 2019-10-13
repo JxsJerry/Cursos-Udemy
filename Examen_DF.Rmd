@@ -1,0 +1,71 @@
+---
+title: "Examen"
+author: "Oscar Gerardo Hernández Martínez"
+date: "19/8/2019"
+output: pdf_document
+---
+
+## 1. ¿Cuántos deportistas aparecen en el data frame
+
+```{r}
+df_ol = read.csv("http://winterolympicsmedals.com/medals.csv ")
+nrow(df_ol)
+```
+
+## 2. ¿Cuántos han ganado medallas de oro, plata y bronce?
+
+```{r}
+subset(df_ol, df_ol$Medal=="Gold", 8) -> df_oro
+
+nrow(df_oro)
+
+subset(df_ol, df_ol$Medal=="Silver", 8) -> df_sil
+
+nrow(df_sil)
+
+subset(df_ol, df_ol$Medal=="Bronze", 8) -> df_br
+
+nrow(df_br)
+```
+
+## 3. ¿En cuántos lugares se han hecho olimpiadas de invierno?
+
+```{r}
+df_ol = read.csv("http://winterolympicsmedals.com/medals.csv ")
+
+str(df_ol)
+```
+
+> R = 17 ciudades
+
+## 4. ¿Cuántos hombres y cuántas mujeres hay?
+
+```{r}
+subset(df_ol, df_ol$Event.gender=="M", 7) -> df_h
+
+nrow(df_h)
+
+subset(df_ol, df_ol$Event.gender=="W", 7) -> df_m
+
+nrow(df_m)
+```
+
+## 5. ¿En qué año participaron más deportistas?
+
+```{r}
+summary(df_ol$Year) #Esto para saber qué año tiene
+#el máximo y así facilitar el filtro
+subset(df_ol, df_ol$Year==2006, 7) -> df_dep
+nrow(df_dep)
+```
+
+> R = En el año 2006 con 252 deportistas.
+
+## 6. El campo NOC indica el país del ganador de la medalla. ¿Qué país puede presumir de haber ganado más medallas de oro en los juegos de invierno entre 1960 y 1996?
+
+```{r}
+df_pais <- subset(df_ol, df_ol$Year > 1959 & df_ol$Year < 1997, )
+summary(df_pais$NOC)
+```
+
+> R = URS

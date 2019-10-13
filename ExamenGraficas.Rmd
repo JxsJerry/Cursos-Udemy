@@ -1,0 +1,64 @@
+---
+title: "ExamenGraficas"
+author: "Oscar Gerardo Hernández Martínez"
+date: "24/7/2019"
+output: pdf_document
+---
+
+
+## Ejercicios
+
+### 1, 6
+
+```{r}
+curve(x^2 - 3*x + 30, 
+      xlim = c(-15, 15), 
+      xlab = expression(x),
+      ylab = expression(y = x^2 - 3*x + 30),
+      main = "Una parábola",
+      add = NA)
+abline(2,7, col = "blue",
+       lwd = 2)
+```
+
+### 2
+
+```{r}
+f <- function(x){
+  x^2 - 3*x + 30
+}
+
+I =(-15:15) #No nos devuelve la misma gráfica
+#ya que estamos tomando 15 elementos antes 
+#de llegar al 0 de la función y 15 elementos
+#después del cero de la función.
+plot(f(I),
+     xlab = expression(x),
+     ylab = expression(y = x^2 - 3*x + 30),
+     main = "Una parábola")
+```
+
+### 3
+
+```{r}
+curve(5*2^x,
+      xlim = c(-10, 25),
+      ylab = expression(5 %.% 2^x),
+      log = "y")
+```
+
+### 4, 5
+
+```{r}
+curve(3*x, xlim = c(-10,20),
+      col = "blue", main = "Dos rectas",
+      sub = "Dos rectas con pendiente opuesta")
+curve(-3*x, xlim = c(-10,20),
+      col = "green",  add = TRUE)
+legend(13, 10, col = c("blue", "green"), 
+       legend = c(expression(3*x),expression(-3*x)),
+       lty = 1, lwd = 2)
+abline(h = 0, col = "red",
+       lwd = 5)
+```
+

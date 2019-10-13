@@ -1,0 +1,144 @@
+---
+title: "Carga de Data Frames"
+author: "Oscar Gerardo Hernández Martínez"
+date: "14/8/2019"
+output: pdf_document
+---
+
+# Carga de ficheros local
+
+```{r}
+df = read.table("../../Cursos programación/Curso de R básico/data/bulls.dat",
+                header = FALSE, 
+                col.names = c("breed", "sale_price",
+                              "shoulder", "fat_free",
+                              "percent_ff", "frame_scale",
+                              "back_fat", "sale_height",
+                              "scale_weight"), 
+                sep = "", dec=".")
+head(df)
+```
+
+Cuando colocamos las comillas, R automáticamente puede autocompletar la dirección dentro del ordenador si presionamos la tecla Tab. Si precisamos "subir" un nivel dentro de la estructura del ordenador, colocamos *"../"*
+
+```{r}
+df2 = read.table("https://maitra.public.iastate.edu/stat501/datasets/bulls.dat",
+                 header = FALSE, 
+                col.names = c("breed", "sale_price",
+                              "shoulder", "fat_free",
+                              "percent_ff", "frame_scale",
+                              "back_fat", "sale_height",
+                              "scale_weight"), 
+                sep = "", dec=".")
+head(df2)
+str(df2)
+```
+
+
+> Es recomendable terminar la carga con la innstrucción **head()** y la instruncción **str()** para que se pueda apreciar si los datos se cargaron de forma correcta o ha habido algún problema con la carga de los mismos.
+
+# Factores en un Data Frame
+
+```{r}
+df3 = read.table("https://maitra.public.iastate.edu/stat501/datasets/olive.dat")
+str(df3)
+```
+
+> En este ejemplo, todo se ha cargado como factores, por lo que, será necesario hacer la pertinente modificación con el comando **stringsAsFactors**
+
+```{r}
+df4 = read.table("https://maitra.public.iastate.edu/stat501/datasets/olive.dat",
+                 stringsAsFactors = FALSE)
+str(df4)
+```
+
+> Ahora, observamos que también convierte como parte de los datos el título de las columnas, por lo que, será entonces necesario hacer uso del comando **header**
+
+```{r}
+df5 = read.table("https://maitra.public.iastate.edu/stat501/datasets/olive.dat",
+                 stringsAsFactors = FALSE, header = TRUE)
+str(df5)
+```
+
+# Guardar un Data Frame
+
+```{r}
+write.table(df5, file = "olive.txt", dec=".")
+df6 = read.table(file = "data/olive.txt", header = TRUE, dec=".")
+head(df6)
+```
+
+#Crear un Data Frame
+
+```{r}
+gender = c("H", "M", "M", "M", "H")
+age = c(23, 45, 20, 30, 18)
+family = c(2, 3, 4, 2, 5)
+df7 = data.frame(genero = gender, edad = age, familia = family,
+                 stringsAsFactors = TRUE)
+row.names(df7) = c("P1", "P2", "P3", "P4", "P5")
+df7
+str(df7)
+dimnames(df7) = list(c("Manny", "Paulina", "Victoria", "Aranza", "Govea")
+                     , c("Sexo", "Edad", "MiembrosFam")
+)
+df7
+df7 = rbind(df7, c("H", 30, 1))
+df7
+df7$Sexo = as.character(df7$Sexo)
+df7$Ingresos = c(10000, 12000, 15000, 20000, 25000, 12000)
+row.names(df7) = c("Manny", "Paulina", "Victoria", "Aranza", "Govea", "Gerardo")
+df7
+```
+
+#Sub-Data Frames
+
+```{r}
+gender = c("H", "M", "M", "M", "H")
+age = c(23, 45, 20, 30, 18)
+family = c(2, 3, 4, 2, 5)
+df7 = data.frame(genero = gender, edad = age, familia = family,
+                 stringsAsFactors = TRUE)
+df7[df7$genero == "M", ] -> df_m
+str(df_m)
+df_m = droplevels(df_m)
+str(df_m)
+```
+
+> Observamos que este nuevo sub-data frame (df_m) hereda la estructura del data frame del cual fue obtenido (df7). Para modificar esta estructura, haremos uso del comando **droplevels()**
+
+# Tidyverse
+
+```{r}
+library(tidyverse)
+iris_petal = select(iris, starts_with("Petal"))
+head(iris_petal)
+iris_length = select(iris, ends_with("Length"))
+head(iris_length)
+```
+
+# Subset
+
+```{r}
+subset(iris, Species == "setosa") -> setosa
+head(setosa, 5)
+str(setosa)
+setosa = droplevels(setosa)
+str(setosa)
+```
+
+```{r}
+subset(iris, Species == "versicolor") -> versicolor
+head(versicolor, 5)
+str(versicolor)
+```
+
+> En este caso para modificar los nombres de las filas, haremos uso de la función **rownames** 
+
+```{r}
+subset(iris, Species == "versicolor") -> versicolor
+rownames(versicolor) = 1:nrow(versicolor)
+head(versicolor, 5)
+str(versicolor)
+```
+

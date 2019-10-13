@@ -1,0 +1,62 @@
+---
+title: "Estructuras"
+author: "Oscar Gerardo Hernández Martínez"
+date: "24/6/2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+Para matrices: 
+
+$\begin{pmatrix} 5 & 6 & 7 \\ 8 & 9 & 10\end{pmatrix}$
+$\begin{vmatrix} 5 & 6 & 7 \\ 8 & 9 & 10\end{vmatrix}$
+
+Sistemas de ecuaciones:
+$$\left.\begin{array}{l} ax + by = c\\ ex - fy = g \end{array}\right\}$$
+$$\left.\begin{array}{c} ax + by = c\\ ex - fy = g \end{array}\right\}$$
+Definiciones: 
+$$|x| = \left\{\begin{array}{rr} -x & \text{si }x\le 0\\ x & \text{si }x > 0 \end{array}\right.$$
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+
+Cuando queremos hacer la raíz cuadrada de dos, podemos hacerlo:
+
+- En $LaTeX$:$\sqrt{2}$
+- En `R` haciendo `r sqrt(2)`
+- La frase completa $\sqrt{2}=$ `rsqrt(2)`
+
+El número $\pi$ empieza por `r pi`
+
+
+```{r prueba, results='hide', echo = FALSE}
+notas = c(3, 5, 7, 7, 9, 10)
+media = mean(notas)
+n = length(notas)
+desv.tip = sd(notas)
+```
+
+Este año he hecho `r n` exámenes, con una media $\overline{x}=$ `r round(media, 2)` y una desviación típica de $s=$ `r round(desv.tip, 2)`
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

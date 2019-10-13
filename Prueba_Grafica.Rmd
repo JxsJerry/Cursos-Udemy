@@ -1,0 +1,67 @@
+---
+title: "Prueba"
+author: "Oscar Gerardo Hernández Martínez"
+date: "30/9/2019"
+output: pdf_document
+---
+
+```{r}
+Respuestas = factor(sample(c("Sí", "No"), size = 12, replace = TRUE))
+Sexo = sample(c("H", "M"), size = length(Respuestas), replace = T)
+barplot(table(Sexo), col=c("lightblue","pink"), main="Diagrama de barras de 
+        las frecuencias\n absolutas de la\n variable \"Sexo\"")
+barplot(prop.table(table(Respuestas)), main="Diagrama de barras 
+        de frecuencias relativas\n de la variable \"Respuestas\"")
+```
+
+## Diagrama de barras - Colores
+
+```{r}
+par(mfrow=c(1,2))
+barplot(table(Respuestas), col=c("green"))
+barplot(table(Respuestas), col=c("red", "blue"))
+```
+
+```{r}
+x = sample(1:5, size = 12, replace = TRUE)
+barplot(table(x), horiz=TRUE)
+```
+
+## Diagrama de barras - Tabla bidimensional
+
+```{r}
+barplot(table(Sexo, Respuestas), legend.text = TRUE)
+barplot(table(Sexo, Respuestas), beside = TRUE, legend.text = TRUE)
+```
+
+
+
+## Diagrama de barras - Parámetros de las leyendas
+
+```{r}
+barplot(table(Respuestas,Sexo), beside=TRUE, names=c("Men", "Women"),
+        col=c("yellow","lightblue"), legend.text=c("No", "Yes"))
+```
+
+## Diagrama circular - Parámetros
+
+```{r}
+pie(table(x), main = "Diagrama circular de la varable x")
+```
+
+```{r}
+pie(table(Respuestas), main = "Diagrama circular de la varable Respuestas")
+```
+
+## Gráficos de mosaico
+
+```{r}
+plot(table(Sexo,Respuestas), main = "Gráfico de las variables
+     \"Sexo\" y \"Respuestas\"")
+```
+
+```{r}
+plot(HairEyeColor, main="Gráfico de mosaico de la tabla HairEyeColor", 
+     col=c("lightblue", "pink"))
+```
+

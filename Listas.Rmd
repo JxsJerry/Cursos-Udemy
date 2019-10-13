@@ -1,0 +1,19 @@
+---
+title: "Listas"
+author: "Oscar Gerardo Hernández Martínez"
+date: "7/7/2019"
+output: pdf_document
+---
+
+Una lista es una estructura formada por diferentes objetos, no necesariamente del mismo tipo, cada cual con un nombre interno
+
+  - **list(...):** función que crea una lista.
+    + Para obtener una componente concreta usamos la instrucción **list$componente**
+    + También podemos indicar el objeto por su posición usando dobles corchetes: **list[[i]]**. Lo que obtendremos es una list formada por esa única componente, no el objeto que forma la componente.
+      + Es importante saber que para poder tratar una sola sección de la lista como vector se debe colocar el [[]] ya que si solo colocamos [] este resultado será tratado como lista, por lo que no podremos realizar operaciones sobre de este.
+    
+### Obtener información de una lista
+
+- **str(list):** para conocer la estructura interna de una lista.
+- **names(list):** para saber los nombres de la lista.
+

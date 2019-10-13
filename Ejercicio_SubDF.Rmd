@@ -1,0 +1,17 @@
+---
+title: "Tarea_SubDF"
+author: "Oscar Gerardo Hernández Martínez"
+date: "19/8/2019"
+output: pdf_document
+---
+
+```{r}
+subset(iris, Species == "virginica" & Sepal.Length < 5, ) -> sub1
+sub1
+```
+
+```{r}
+subset(iris, Species == "setosa" & Sepal.Length > 2, ) -> sub1
+sub1
+```
+
