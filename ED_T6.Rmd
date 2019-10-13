@@ -1,0 +1,83 @@
+---
+title: "Tarea 6"
+author: "Oscar Gerardo Hernández Martínez"
+date: "23/9/2019"
+output: pdf_document
+---
+
+# Ejercicio 1
+
+$$(3x^2 + 2xy^2-2x)dx + (3y^2+2x^2y-2y)dy = 0$$
+
+1. Identificamos a $M$ y $N$
+$$M(x,y) = 3x^2 + 2xy^2-2x$$
+$$N(x,y) = 3y^2+2x^2y-2y$$
+
+2. Comprobamos si $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$
+$$\left.\begin{array}{rr}
+\frac{\partial M}{\partial y} = 4xy \\
+\frac{\partial N}{\partial x} = 4xy \\
+\end{array}\right\} \rightarrow Son\ iguales$$
+
+$\therefore$ Es una Ecuación Diferencial Exacta.
+
+3. Sabemos que $\frac{\partial f}{\partial x} = M(x,y) \Rightarrow$ integramos $M(x,y)$ con respecto a $x$
+$$f(x,y)= \int \frac{\partial f}{\partial x}dx =\int M(x,y)dx = \int (3x^2 + 2xy^2-2x)dx = x^3 + x^2y^2 - x^2 + h(y) \rightarrow \star$$
+4. Derivamos parcialmente con respecto a $y$
+$$\frac{\partial f}{\partial y} = \frac{\partial d}{\partial y}[x^3 + x^2y^2 - x^2 + h(y)] = 2x^2y+h'(y)$$
+5. Como $\frac{\partial f}{\partial y} = N(x,y)$
+$$\Rightarrow 2x^2y+h'(y) = 3y^2+2x^2y-2y$$
+$$\Rightarrow h'(y) = 3y^2 - 2y$$
+6. Integramos $h'(y)$ con respecto a $y$
+$$\int h'(y)dy = \int (3y^2 - 2y)dy = y^3-y^2 + C$$
+7. Sustituimos el resultado en $\star$
+$$\Rightarrow f(x,y) = x^3 + x^2y^2 - x^2 + y^3 - y^2 + C$$
+
+# Ejercicio 2
+
+$$(2xy-e^{2y})dx + (x^2 + xe^{2y} - y)dy = 0$$
+1. Identificamos a $M$ y $N$
+$$M(x,y) = 2xy-e^{2y}$$
+$$N(x,y) = x^2 + xe^{2y} - y$$
+2. Comprobamos si $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$
+$$\left.\begin{array}{rr}
+\frac{\partial M}{\partial y} = 2x-2e^{2y} \\
+\frac{\partial N}{\partial x} = 2x + e^{2y} \\
+\end{array}\right\} \rightarrow No\ Son\ iguales$$
+
+$\therefore$ No es una Ecuación Diferencial Exacta.
+
+> En otro caso: La ecuación $(2xy - e^{2y})dx + (x^2 -2xe^{2y} - y)dy = 0$ Puede ser exacta.
+
+
+# Ejercicio 3
+
+$$(y\sin(x)+\sin(y)+\frac{1}{x})dx + (x\cos(y)-\cos(x)+\frac{1}{y})dy = 0$$
+
+1. Identificamos a $M$ y $N$
+$$M(x,y) = y\sin(x)+\sin(y)+\frac{1}{x}$$
+$$N(x,y) = x\cos(y)-\cos(x)+\frac{1}{y}$$
+
+2. Comprobamos si $\frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}$
+$$\left.\begin{array}{rr}
+\frac{\partial M}{\partial y} = \sin(x)+\cos(y) \\
+\frac{\partial N}{\partial x} = \cos(y)+\sin(x) \\
+\end{array}\right\} \rightarrow Son\ iguales$$
+
+$\therefore$ Es una Ecuación Diferencial Exacta.
+
+3. Sabemos que $\frac{\partial f}{\partial x} = M(x,y) \Rightarrow$ integramos $M(x,y)$ con respecto a $x$
+$$f(x,y)= \int \frac{\partial f}{\partial x}dx =\int M(x,y)dx = \int (y\sin(x)+\sin(y)+\frac{1}{x})dx = -y\cos(x)+x\sin(y)+\ln|x| + h(y) \rightarrow \star_{2}$$
+4. Derivamos parcialmente con respecto a $y$
+$$\frac{\partial f}{\partial y} = \frac{\partial d}{\partial y}[-y\cos(x)+x\sin(y)+\ln|x| + h(y)] = -\cos(x)+x\cos(y)+h'(y)$$
+5. Como $\frac{\partial f}{\partial y} = N(x,y)$
+$$\Rightarrow -\cos(x)+x\cos(y)+h'(y) = x\cos(y)-\cos(x)+\frac{1}{y}$$
+$$\Rightarrow h'(y) = \frac{1}{y}$$
+6. Integramos $h'(y)$ con respecto a $y$
+$$\int h'(y)dy = \int (\frac{1}{y})dy = \ln|y| + C$$
+7. Sustituimos el resultado en $\star_{2}$
+$$\Rightarrow f(x,y) = -y\cos(x)+x\sin(y)+\ln|x|+\ln|y| + C$$
+
+
+
+

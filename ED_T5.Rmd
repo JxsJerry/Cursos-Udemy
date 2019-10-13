@@ -1,0 +1,169 @@
+---
+title: "Tarea 5"
+author: "Oscar Gerardo Hernández Martínez"
+date: "19/9/2019"
+output: pdf_document
+---
+
+# Ejercicios Bernoulli
+
+1.
+
+$$xy' + x^5y = x^5y^{\frac{1}{2}}$$
+
+> Multiplicamos por el recíproco de $y^r$, donde $r = \frac{1}{2}$
+
+
+$$\frac{1}{y^{\frac{1}{2}}}(xy' + x^5y) = x^5$$
+
+> Hacemos cambio de variable $u = y^{\frac{1}{2}}$
+
+$$u = y^{\frac{1}{2}} \Rightarrow u' = \frac{1}{2}y^{-\frac{1}{2}}\frac{dy}{dx} \Rightarrow u'=\frac{1}{2}y^{-\frac{1}{2}}y'$$
+
+> Sustituimos en la ecuación
+
+$$2xu' + x^5u = x^5$$
+
+> La transformamos a una ecuación de la forma $\frac{dx}{dy} + P(x)y = Q(x)$
+
+$$\frac{dx}{du} + \frac{x^4u}{2} = \frac{x^4}{2}$$
+$$P(x) = \frac{x^4}{2}, \ Q(x) = \frac{x^4}{2}, \ I = e^{\int \frac{x^4}{2}dx} = e^{\frac{x^5}{10}}$$
+
+> Multiplicamos por el factor integrante
+
+$$e^{\frac{x^5}{10}}[u'+\frac{ux^4}{2}] = \frac{x^4}{2}e^{\frac{x^5}{10}}$$
+$$e^{\frac{x^5}{10}}u' + \frac{x^4}{2}ue^{\frac{x^5}{10}} = \frac{x^4}{2}e^{\frac{x^5}{10}}$$
+
+> Observamos que el lado izquierdo es la derivada del producto de las funciones $e^{\frac{x^5}{10}}$ y $u$
+
+$$(e^{\frac{x^5}{10}}u)' = \frac{x^4}{2}e^{\frac{x^5}{10}}$$
+$$\int (e^{\frac{x^5}{10}}u)'dx= \int \frac{x^4}{2}e^{\frac{x^5}{10}}dx$$
+$$e^{\frac{x^5}{10}}u = \int \frac{x^4}{2}e^{\frac{x^5}{10}}dx$$
+$$e^{\frac{x^5}{10}}u = e^{\frac{x^5}{10}} + C$$
+$$u = 1 + \frac{C}{e^{\frac{x^5}{10}}}$$
+$$y^{\frac{1}{2}} = 1 + \frac{C}{e^{\frac{x^5}{10}}}$$
+
+2.
+
+$$5y^3dx - y^2(-2x + y^2x^4)dy = 0$$
+
+> Suponemos $dy \ne 0$ y dividimos la ecuación entre $\frac{1}{dy}$
+
+$$5y^3x' - y^2(-2x+y^2x^4) = 0$$
+
+> Desarrollamos
+
+$$5y^3x' + 2xy^2 - y^4x^4= 0$$
+$$5y^3x' + 2xy^2 = y^4x^4$$
+
+> Observamos que $r=4$, multiplicamos por el recíproco de $x^r$, $i.e. \ x^{-4}$
+
+$$x^{-4}[5y^3x' + 2xy^2] = y^4$$
+$$\frac{5y^3x'}{x^4} + \frac{2y^2}{x^3} = y^4$$
+$$u = \frac{1}{x^3} \Rightarrow u'= -\frac{3}{x^4} \frac{dx}{dy} \Rightarrow u' = -\frac{3}{x^4}x' \Rightarrow -\frac{1}{3}u' = x^{-4}x'$$
+$$-\frac{5}{3}y^3u' + 2y^2u = y^4$$
+
+> Multiplicamos por $-\frac{3}{5}y^{-3}$ 
+
+$$\Rightarrow u' - \frac{6}{5}y^{-1}u = -\frac{3}{5}y$$
+
+> Tenemos que $P(x) = -\frac{6}{5}y^{-1}$, $Q(x)=-\frac{3}{5}y$ y $I=e^{\int -\frac{6}{5}y^{-1}} = e^{-\frac{6}{5} \ln|y|} = y^{-\frac{6}{5}}$
+
+$$\Rightarrow y^{-\frac{6}{5}}[u' -\frac{6}{5}y^{-1}u] = -\frac{3}{5}y^{-\frac{1}{5}}$$
+$$u'y^{-\frac{6}{5}}-\frac{6}{5}uy^{-\frac{11}{5}} = -\frac{3}{5}y^{-\frac{1}{5}}$$
+
+> Observamos que el lado izquierdo es la derivada del producto de las funciones $u$ y $y^{-\frac{6}{5}}$
+
+$$\Rightarrow (uy^{-\frac{6}{5}})' = -\frac{3}{5}y^{-\frac{1}{5}}$$
+$$\Rightarrow \int (uy^{-\frac{6}{5}})'dy = -\frac{3}{5} \int y^{-\frac{1}{5}}dy$$
+$$\Rightarrow uy^{-\frac{6}{5}} = -\frac{3}{5} \int y^{-\frac{1}{5}}dy$$
+$$\Rightarrow uy^{-\frac{6}{5}} = -\frac{3}{4}y^{\frac{4}{5}} + C$$
+
+> Despejamos u
+
+$$\Rightarrow u = -\frac{3}{4}y^{2} +Cy^{\frac{6}{5}} $$
+$$\Rightarrow x^{-3} = -\frac{3}{4}y^{2} +Cy^{\frac{6}{5}}$$
+
+# Ejercicios Ricatti
+
+1.
+$$y' = y^2 - 2xy + 1 + x^2$$
+> Con solución particular $y = x, \ y' = 1$
+Sustituimos 
+
+$$y' = x^2 - 2x^2 +1 + x^2$$
+$$1=1 \checkmark$$
+
+> Hacemos cambio de variable $y = x + \frac{1}{z}$
+
+$$y' = 1 - z^{-2}z'$$
+
+> Sustituímos en la ecuación
+
+$$1-z^{-2}z' = (x + \frac{1}{z})^2 - 2x(x + \frac{1}{z}) + 1+ x^2$$
+$$z^{-2}z' = x^2 + \frac{2x}{z} + \frac{1}{z^2} - 2x^2 - \frac{2x}{z} + x^2$$
+$$-z^{-2}z' = \frac{1}{z^2}$$
+$$z' = -1$$
+
+> Integramos de ambos lados
+
+$$\int z'dx = -\int dx$$
+$$z = -x + C$$
+$$z = \frac{1}{y-x}$$
+$$\Rightarrow \frac{1}{y-x} = -x + C$$
+
+> Suponemos $y \ne x$
+
+$$1 = (-x + C)(y-x)$$
+$$\frac{1}{-x+C} = y-x$$
+$$y = x + \frac{1}{C-x}$$
+
+2.
+$$y' = y^2 - 2y - 15$$
+
+> Solución particular $y = -3, \ y' = 0$ 
+
+$$y' = 9 + 6 -15$$
+$$y' = 0 \checkmark$$
+$$y = -3 + \frac{1}{z}$$
+$$y' = -\frac{1}{z^2}z'$$
+
+> Sustituimos en la ecuación
+
+$$-z^{-2}z' = (-3 + \frac{1}{z})^2 -2(-3 + \frac{1}{z}) - 15$$
+$$-z^{-2}z' = 9 - \frac{6}{z} + \frac{1}{z^2} + 6 - \frac{2}{z} - 15$$
+$$-z^{-2}z' = - \frac{6}{z} + \frac{1}{z^2} - \frac{2}{z}$$
+$$z' = -6z + 1 -2z$$
+$$z' = -8z + 1$$
+$$z' + 8z = 1$$
+
+> Tenemos que $P(x)=8$, $Q(x)=1$ y $I=e^{\int 8 dx} = e^{8x}$
+Multiplicamos por el factor integrante
+
+$$\Rightarrow e^{8x}z' + 8e^{8x}z = e^{8x}$$
+$$(e^{8x}z)' = e^{8x}$$
+
+> Integramos ambas partes
+
+$$\int (e^{8x}z)'dx = \int e^{8x}dx$$
+$$e^{8x}z = \frac{1}{8}e^{8x} + C$$
+$$z = \frac{1}{8} + \frac{C}{e^{8x}}$$
+
+> Sustituimos $z = \frac{1}{y+3}$
+
+$$\frac{1}{y+3} = \frac{1}{8} + \frac{1}{e^{8x}}$$
+
+> Despejamos $y$
+
+$$1 = (y+3)(\frac{1}{8} + \frac{1}{e^{8x}})$$
+$$y+3 = \frac{1}{\frac{1}{8}+\frac{C}{e^{8x}}}$$
+$$y = \frac{1}{\frac{1}{8}+\frac{C}{e^{8x}}} - 3$$
+$$y = \frac{e^{8x}}{e^{8x}+8C}-3$$
+$$y = \frac{e^{8x}-3(e^{8x}+8C)}{e^{8x}+8C}$$
+$$y = \frac{5e^{8x} - 24C}{e^{8x}+8C}$$
+
+
+
+
+
+

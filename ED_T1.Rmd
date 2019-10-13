@@ -1,0 +1,116 @@
+---
+title: "Problemas con condiciones iniciales"
+author: "Oscar Gerardo Hernández Martínez"
+date: "1/9/2019"
+output: pdf_document
+---
+
+### Ejercicios
+
+#### 1. 
+Demuestra que $y = \frac{2}{3}e^x + e^{-2x}$ es una solución de la ecuación diferencial $y' + 2y = 2e^x$
+
+Obtenemos $y'$
+
+$y' = \frac{2}{3}e^x - 2e^{-2x}$
+
+Sustituimos $y$ en la ecuación $y' + 2y = 2e^x$
+
+$y' + 2(\frac{2}{3}e^x + e^{-2x}) = 2e^x$
+
+
+Despejamos $y'$
+
+$y' = 2e^x - 2(\frac{2}{3}e^x + e^{-2x})$
+
+$y' = \frac{6}{3}e^x - \frac{4}{3}e^x - e^{-2x}$
+
+$y' = \frac{2}{3}e^x - e^{-2x}$
+
+$\therefore y = \frac{2}{3}e^x + e^{-2x}$ es una solución de la ecuación diferencial $y' + 2y = 2e^x$
+
+#### 2. 
+¿Cuáles de las siguientes funciones son soluciones de la ecuación diferencial $y'' + y = \sin(x)$
+
+a) $y = \sin(x)$
+b) $y = \cos(x)$
+c) $y = \frac{1}{2}x\sin(x)$
+d) $y = -\frac{1}{2}x\cos(x)$
+
+   + Para *a)* obtenemos $y''$
+
+$$y'' = -\sin(x)$$
+
+Sustituimos $y = \sin(x)$ en la ecuación $y'' + y = \sin(x)$
+
+$$y'' + \sin(x) = \sin(x)$$
+
+Despejamos $y''$ 
+
+$$y'' = \sin(x) - sin(x) = 0$$
+
+$\therefore y = \sin(x)$ NO es una solución de la ecuación diferencial $y'' + y = \sin(x)$
+
+  + Para *b)* obtenemos $y''$
+
+$$y'' = -\cos(x)$$
+
+Sustituimos $y = \cos(x)$ en la ecuación $y'' + y = \sin(x)$
+
+$$y'' + \cos(x) = \sin(x)$$
+
+Despejamos $y''$
+
+$$y'' = \sin(x) - \cos(x)$$
+
+$\therefore y = \cos(x)$ NO es una solución de la ecuación diferencial $y'' + y = \sin(x)$
+
+  + Para *c)* obtenemos $y''$
+
+$$y'' = \cos(x) - \frac{1}{2}x\sin(x)$$
+
+Sustituimos $y = \frac{1}{2}x\sin(x)$ en la ecuación $y'' + y = \sin(x)$
+
+$$y'' + \frac{1}{2}x\sin(x) = \sin(x)$$
+
+Despejamos $y''$
+
+$$y'' = \sin(x) - \frac{1}{2}x\sin(x)$$
+
+$\therefore y = \frac{1}{2}x\sin(x)$ NO es una solución de la ecuación diferencial $y'' + y = \sin(x)$ 
+
+  + Para *d)* obtenemos $y''$
+
+$$y'' = \sin(x) + \frac{1}{2}x\cos(x)$$
+
+Sustituimos $y = -\frac{1}{2}x\cos(x)$ en la ecuación $y'' + y = \sin(x)$
+
+$$y'' - \frac{1}{2}x\cos(x) = \sin(x)$$
+
+Despejamos $y''$
+
+$$y'' = \sin(x) + \frac{1}{2}x\cos(x)$$
+
+$\therefore y = -\frac{1}{2}x\cos(x)$ SI es una solución de la ecuación diferencial $y'' + y = \sin(x)$
+
+#### 3.
+$y' = -y^2$  
+
+$(0,\frac{1}{2}) \Longleftrightarrow y(0) = \frac{1}{2}$
+
+$y = \frac{1}{x + c}$
+
+Obtenemos el valor de $c$ con la información de $y(0) = \frac{1}{2}$
+
+$$y(0) = \frac{1}{2} = \frac{1}{c} \Longrightarrow c = 2$$
+
+$$\therefore y = \frac{1}{x+2}$$
+
+Obtenemos $y'$
+
+$$y' = -\frac{1}{(x+2)^2}$$
+Obtenemos $-y^2$
+
+$$-y^2 = -\frac{1}{(x+2)^2}$$
+
+$\therefore y = \frac{1}{x+2}$ Es una solución de la ecuación diferencial $y' = -y^2$

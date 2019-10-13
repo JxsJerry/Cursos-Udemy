@@ -1,0 +1,36 @@
+---
+title: "Tarea 3"
+author: "Oscar Gerardo Hernández Martínez"
+date: "10/9/2019"
+output: pdf_document
+---
+
+## Ejercicio 1
+
+$$\frac{dy}{dx}=\frac{x^2}{1-y^2}$$
+$$(1-y^2)dy = x^2dx$$
+$$\int (1-y^2)dy = \int x^2 dx$$
+$$y - \frac{y^3}{3} = \frac{x^3}{3} + C$$
+$$\frac{3y-y^3}{3} = \frac{x^3}{3} + C$$
+$$3y-y^3 = x^3 + C$$
+$$y(3-y^2) = x^3 + C$$
+$$y(\sqrt(3)+y)(\sqrt(3)-y) = x^3 + C$$
+### Ejercicio 2
+
+$$\frac{dy}{dx} = \frac{3x^2 + 4x + 2}{2(y-1)} ; \ y(0) = -1$$
+$$2(y-1)dy = (3x^2 + 4x +2)dx$$
+$$\int 2(y-1)dy = \int (3x^2 +4x +2)dx$$
+$$2\int (y-1)dy = \int (3x^2 +4x +2)dx$$
+$$2(\frac{y^2}{2}-y) = x^3 + 2x^2 + 2x + C$$
+$$y^2 - 2y = x^3 + 2x^2 + 2x + C$$
+$$y(y - 2) = x^3 + 2x^2 + 2x +C$$
+$$(y^2 - 2y + 1) = x^3 + 2x^2 + 2x + 1 + C$$
+$$(y-1)^2 = x^3 + 2x^2 + 2x + 1 + C$$
+$$(y-1)^2 = x(x^2 + 2x + 2) + 1 + C$$
+$$(y-1)^2 = x(x^2 + 2x + 1 + 1) + 1 + C$$
+$$(y-1)^2 = x[(x+1)^2 +1] + 1 + C$$
+
+
+
+
+

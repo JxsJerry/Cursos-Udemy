@@ -1,0 +1,69 @@
+---
+title: "Tarea 4"
+author: "Oscar Gerardo Hernández Martínez"
+date: "17/9/2019"
+output: pdf_document
+---
+
+### Ejercicio 1
+
+Unos biólogos abastecieron un lago con 400 peces y estimaron la capacidad de soporte en 10000. El número de peces se triplicó en el primer año.
+
+- a) Si se supone que el tamaño de la población de peces satisface la ecuación logística, escribe su ecuación:
+
+Tenemos: $M= 10000$, $P(0) = 400$, $A = \frac{10000-400}{400} = 24$, $P(1) = 1200 \rightarrow$ la población que se triplicó.
+
+Además, sabemos que $P = \frac{M}{1+Ae^{-Kt}} \Rightarrow P = \frac{10000}{1+24e^{-Kt}}$
+$$\Rightarrow P(1) = \frac{10000}{1+24e^{-K}} = 1200$$
+
+> Despejamos K de la ecuación:
+
+$$1200(1+24e^{-K}) = 10000$$
+$$1200 + 28800e^{-K} = 10000$$
+$$28800e^{-K} = 8800$$
+$$e^{-K} = \frac{8800}{28800}$$
+$$\ln(e^{-K}) = ln(\frac{8800}{28800})$$
+$$\Rightarrow -K \approx -1.1857 \Rightarrow K \approx 1.1857$$
+
+> Una vez que obtenemos el valor de K, podemos obtener la ecuación logística, quedando:
+
+$$\frac{dP}{dt} = (1.1857)P(1-\frac{P}{10000})$$
+
+- b) ¿En cuánto tiempo la población alcanzará las 5000 unidades?
+
+> De la ecuación $P = \frac{10000}{1 + 24e^{(-1.1857)t}}$ sustituiremos $P = 5000$ y despejaremos $t$
+
+$$5000 = \frac{10000}{1 + 24e^{(-1.1857)t}}$$
+$$5000(1 + 24e^{(-1.1857)t}) = 10000$$
+$$5000 + 120000e^{(-1.1857)t} = 10000$$
+$$120000e^{(-1.1857)t} = 5000$$
+$$e^{(-1.1857)t} = \frac{5000}{120000}$$
+$$-1.1857t = \ln(\frac{5000}{120000})$$
+$$\Rightarrow t = \frac{\ln{(\frac{5000}{120000})}}{-1.1857} = 2.68$$
+$\therefore$ la población alcanzará las 5000 unidades en 2 años, 8 meses y 4 días aproximadamente.
+
+
+### Ejercicio 2
+
+$$y' + 2xy = 1$$
+Tenemos: $P(x) = 2x$, $Q(x) = 1$
+
+> Obtenemos el factor integrante $I(x) = e^{\int P(x)dx}$
+
+$$I(x) = e^{\int 2xdx} = e^{x^2}$$
+
+> Multiplicamos ambos lados de la ecuación por el factor integrante
+
+$$e^{x^2}(y' + 2xy) = e^{x^2}$$
+$$e^{x^2}y' + 2xe^{x^2}y = e^{x^2}$$
+
+> Observamos que $\frac{dy}{dx} (e^{x^2}\cdot y) = e^{x^2}y' + 2xe^{x^2}y$ por la fórmula de la derivación del producto
+
+$$\therefore (e^{x^2}y)' = e^{x^2}$$
+$$\Rightarrow \int(e^{x^2}y)' dx = \int e^{x^2}$$
+$$\Rightarrow e^{x^2}y = \frac{1}{2}\sqrt\pi \cdot erfi(x) + C$$
+
+> *Integral aproximada con WolframAlpha*
+
+$$\therefore y = \frac{1}{2e^{x^2}}\sqrt\pi \cdot erfi(x) + \frac{C}{2e^{x^2}}$$
+
