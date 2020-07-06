@@ -1,0 +1,38 @@
+---
+title: "05-Iris"
+author: "Oscar Gerardo Hernández Martínez"
+date: "13/8/2019"
+output: pdf_document
+---
+
+# Data frame de Iris
+
+```{r}
+df = iris #Ejecutamos solo esta línea con Ctrl + Enter
+          #Para tenerla ya ejecutada y poder acceder a sus 
+          #Elementos de manera más sencilla.
+df
+head(df,5)
+tail(df,5)
+names(df)
+str(df)
+rownames(df)
+dimnames(df)
+dim(df)
+
+df$Petal.Length[1:10] #accedo a los 10 primeros elementos de 
+#la longitud de flores
+df$Species[1:10]
+```
+
+## Acceso al Data Frame
+
+```{r}
+df[1:10, ] #[Filas, Columnas]
+#En caso de no poner nada en Columnas, R 
+#Interpretará que queremos todas las columnas
+df[1:10, 2:4]
+df[df$Species == "setosa" & df$Sepal.Width > 4, ]
+df[df$Species == "setosa" & df$Sepal.Width > 4, ][c(1,3), c(2,5)]
+```
+
